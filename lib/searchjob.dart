@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:newdemo/signinpage.dart';
 import 'package:newdemo/widgets/dropdown.dart';
-import 'package:newdemo/widgets/fullwidthbutton.dart';
+import 'package:newdemo/widgets/lefticonfullwidthbutton.dart';
 
 class SearchJob extends StatefulWidget {
   const SearchJob({Key? key}) : super(key: key);
@@ -81,7 +81,7 @@ class _SearchJobState extends State<SearchJob> {
               SizedBox(
                 height: 50,
               ),
-              FullwidthButton(
+              LeftIconFullwidthButton(
                 buttoncolor: Color(0xff122f51),
                 buttonicon: Icons.search,
                 buttontext: 'Search',
@@ -93,7 +93,7 @@ class _SearchJobState extends State<SearchJob> {
               SizedBox(
                 height: 15,
               ),
-              FullwidthButton(
+              LeftIconFullwidthButton(
                 buttoncolor: Colors.transparent,
                 buttonicon: Icons.local_fire_department,
                 buttontext: 'View New Jobs',

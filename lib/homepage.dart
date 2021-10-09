@@ -107,11 +107,6 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 50,
                 ),
-                // Image(
-                //   image: NetworkImage(
-                //     'http://images1.fanpop.com/images/image_uploads/New-banner-pizza-hut-885262_800_100.jpg',
-                //   ),
-                // ),
               ],
             ),
           ),

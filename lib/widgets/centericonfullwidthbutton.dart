@@ -2,19 +2,22 @@
 
 import 'package:flutter/material.dart';
 
-class FullwidthButton extends StatelessWidget {
-  final IconData buttonicon;
+class CenterIconFullWidthButton extends StatelessWidget {
+  final IconData? buttonicon;
   final String buttontext;
   final Color buttoncolor;
   final Color? forcegroundcolor;
   final Color bordercolor;
   final double? elevation;
+  final double? sizeboxwidth;
   final Color? iconcolor;
   final Color? textcolor;
+  final EdgeInsetsGeometry? margin;
+  final Widget? widget;
 
-  const FullwidthButton({
+  const CenterIconFullWidthButton({
     Key? key,
-    required this.buttonicon,
+    this.buttonicon,
     required this.buttontext,
     required this.buttoncolor,
     this.forcegroundcolor,
@@ -22,17 +25,21 @@ class FullwidthButton extends StatelessWidget {
     this.elevation,
     this.iconcolor,
     this.textcolor,
+    this.margin,
+    this.sizeboxwidth,
+    this.widget,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: margin,
       decoration: BoxDecoration(
         border: Border.all(
           color: bordercolor,
         ),
         borderRadius: BorderRadius.all(
-          Radius.circular(10),
+          Radius.circular(5),
         ),
       ),
       child: ElevatedButton(
@@ -42,7 +49,7 @@ class FullwidthButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(buttoncolor),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(5),
             ),
           ),
           padding: MaterialStateProperty.all(
@@ -54,24 +61,23 @@ class FullwidthButton extends StatelessWidget {
         ),
         onPressed: () {},
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              width: 0,
-              child: Icon(
-                buttonicon,
-                color: iconcolor,
-              ),
+            Icon(
+              buttonicon,
+              color: iconcolor,
+              size: 24,
             ),
-            Expanded(
-              flex: 1,
-              child: Text(
-                buttontext,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: textcolor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+            SizedBox(
+              width: sizeboxwidth,
+            ),
+            Text(
+              buttontext,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: textcolor,
+                fontWeight: FontWeight.w400,
+                fontSize: 20,
               ),
             ),
           ],
