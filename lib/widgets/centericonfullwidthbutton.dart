@@ -14,6 +14,7 @@ class CenterIconFullWidthButton extends StatelessWidget {
   final Color? textcolor;
   final EdgeInsetsGeometry? margin;
   final Widget? widget;
+  final VoidCallback onpress;
 
   const CenterIconFullWidthButton({
     Key? key,
@@ -28,6 +29,7 @@ class CenterIconFullWidthButton extends StatelessWidget {
     this.margin,
     this.sizeboxwidth,
     this.widget,
+    required this.onpress,
   }) : super(key: key);
 
   @override
@@ -59,7 +61,11 @@ class CenterIconFullWidthButton extends StatelessWidget {
             ),
           ),
         ),
-        onPressed: () {},
+        onPressed:
+            // () {
+            // Navigator.push(context, MaterialPageRoute(builder: (context) => onpress));
+            //   },
+            onpress,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

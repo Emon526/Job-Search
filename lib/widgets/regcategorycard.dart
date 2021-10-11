@@ -15,6 +15,7 @@ class RegestrationCategoryCard extends StatelessWidget {
   final Color? titleColor;
   final Color? subtitleColor;
   final Color? iconColor;
+  final VoidCallback onpressed;
 
   const RegestrationCategoryCard({
     Key? key,
@@ -28,27 +29,33 @@ class RegestrationCategoryCard extends StatelessWidget {
     this.titleColor,
     this.subtitleColor,
     this.iconColor,
+    required this.onpressed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 110,
-      child: Card(
-        elevation: elevation,
-        color: cardcolor,
-        child: Row(
-          children: [
-            Stack(
-              children: [
-                Positioned(
-                  child: RotatedBox(
+    final Size size = MediaQuery.of(context).size;
+    return InkWell(
+      onTap: onpressed,
+      child: Container(
+        height: size.height * 0.155,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5),
+          ),
+          elevation: elevation,
+          color: cardcolor,
+          child: Row(
+            children: [
+              Stack(
+                children: [
+                  RotatedBox(
                     quarterTurns: 2,
                     child: CustomPaint(
                       child: Padding(
                         padding: const EdgeInsets.only(
-                          top: 10,
-                          left: 10,
+                          top: 18,
+                          left: 12,
                         ),
                         child: RotatedBox(
                           quarterTurns: 2,
@@ -67,42 +74,45 @@ class RegestrationCategoryCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  categorytitle,
-                  style: TextStyle(
-                      color: titleColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
-                // AnimatedTextKit(
-                //   animatedTexts: categorysubtitle,
-                // ),
-
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.60,
-                  padding: EdgeInsets.only(right: 15.0),
-                  child: Text(
-                    categorysubtitle,
-                    overflow: TextOverflow.ellipsis,
+                  SizedBox(
+                    height: size.height * 1,
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    categorytitle,
                     style: TextStyle(
-                      color: subtitleColor,
-                      fontSize: 15,
+                        color: titleColor,
+                        fontSize: size.height * 0.025,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  // AnimatedTextKit(
+                  //   animatedTexts: categorysubtitle,
+                  // ),
+
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.60,
+                    padding: EdgeInsets.only(right: 15.0),
+                    child: Text(
+                      categorysubtitle,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: subtitleColor,
+                        fontSize: 15,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

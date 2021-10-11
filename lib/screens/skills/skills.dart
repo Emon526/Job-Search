@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:newdemo/screens/account/signin/createaccount.dart';
 import 'package:newdemo/model/listviewe.dart';
+import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 
 import 'package:newdemo/widgets/skillcard.dart';
 
@@ -73,20 +75,16 @@ class _SkillsState extends State<Skills> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
-        onPressed: () => {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => ,
-          //   ),
-          // ),
+      floatingActionButton: FloatingArrowNextButton(
+        icon: Icons.arrow_forward,
+        onpress: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CreateAccount(),
+            ),
+          ),
         },
-        child: Icon(
-          Icons.arrow_forward,
-          size: 40,
-        ),
       ),
     );
   }

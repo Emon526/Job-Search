@@ -12,6 +12,7 @@ class LeftIconFullwidthButton extends StatelessWidget {
   final Color? iconcolor;
   final Color? textcolor;
   final EdgeInsetsGeometry? margin;
+  final VoidCallback onpress;
 
   const LeftIconFullwidthButton({
     Key? key,
@@ -24,6 +25,7 @@ class LeftIconFullwidthButton extends StatelessWidget {
     this.iconcolor,
     this.textcolor,
     this.margin,
+    required this.onpress,
   }) : super(key: key);
 
   @override
@@ -55,7 +57,7 @@ class LeftIconFullwidthButton extends StatelessWidget {
             ),
           ),
         ),
-        onPressed: () {},
+        onPressed: onpress,
         child: Row(
           children: [
             SizedBox(

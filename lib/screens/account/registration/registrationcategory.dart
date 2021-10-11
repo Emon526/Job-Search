@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:newdemo/screens/skills/skills.dart';
+import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 import 'package:newdemo/widgets/helpline.dart';
 import 'package:newdemo/widgets/regcategorycard.dart';
 
@@ -10,6 +12,7 @@ class RegistrationCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         leading: IconButton(
@@ -19,8 +22,7 @@ class RegistrationCategory extends StatelessWidget {
             size: 36,
           ),
           onPressed: () {
-            // Navigator.push(
-            //     context, MaterialPageRoute(builder: (context) => ));
+            Navigator.pop(context);
           },
         ),
         elevation: 0,
@@ -57,9 +59,10 @@ class RegistrationCategory extends StatelessWidget {
               height: 20,
             ),
             RegestrationCategoryCard(
+              onpressed: () {},
               customdesignstartColor: Colors.red,
               customdesignendColor: Colors.red,
-              cardcolor: Colors.blue,
+              cardcolor: Colors.white,
               elevation: 3,
               iconData: Icons.work,
               categorytitle: 'Function Category',
@@ -69,9 +72,10 @@ class RegistrationCategory extends StatelessWidget {
             ),
             SizedBox(height: 10),
             RegestrationCategoryCard(
+              onpressed: () {},
               customdesignstartColor: Color(0xff122f51),
               customdesignendColor: Color(0xff122f51),
-              cardcolor: Colors.blue,
+              cardcolor: Colors.white,
               elevation: 3,
               iconData: Icons.handyman,
               categorytitle: 'Special Skilled Category',
@@ -86,17 +90,16 @@ class RegistrationCategory extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
-        onPressed: () => {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => HomePage(),
-          //   ),
-          // ),
+      floatingActionButton: FloatingArrowNextButton(
+        icon: Icons.arrow_forward,
+        onpress: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Skills(),
+            ),
+          ),
         },
-        child: Icon(Icons.arrow_forward),
       ),
     );
   }

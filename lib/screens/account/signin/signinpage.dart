@@ -4,8 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:newdemo/homepage.dart';
+import 'package:newdemo/screens/account/signin/createaccount.dart';
+import 'package:newdemo/screens/registration/registrationcategory.dart';
 import 'package:newdemo/widgets/field.dart';
+import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -13,6 +15,7 @@ class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(
@@ -114,12 +117,22 @@ class SignIn extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      'Create Account',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xff122f51),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CreateAccount(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'Create Account',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff122f51),
+                        ),
                       ),
                     ),
                   ],
@@ -129,17 +142,16 @@ class SignIn extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
-        onPressed: () => {
+      floatingActionButton: FloatingArrowNextButton(
+        icon: Icons.arrow_forward,
+        onpress: () => {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => HomePage(),
+              builder: (context) => RegistrationCategory(),
             ),
           ),
         },
-        child: Icon(Icons.arrow_forward),
       ),
     );
   }

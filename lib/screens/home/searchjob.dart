@@ -3,8 +3,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:newdemo/signinpage.dart';
+import 'package:newdemo/screens/account/signin/namesignin.dart';
+
+import 'package:newdemo/screens/signin/signinpage.dart';
 import 'package:newdemo/widgets/dropdown.dart';
+import 'package:newdemo/widgets/floatingarrownextbutton.dart';
+import 'package:newdemo/widgets/helpline.dart';
 import 'package:newdemo/widgets/lefticonfullwidthbutton.dart';
 
 class SearchJob extends StatefulWidget {
@@ -18,7 +22,7 @@ class _SearchJobState extends State<SearchJob> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.red,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
@@ -89,6 +93,7 @@ class _SearchJobState extends State<SearchJob> {
                 elevation: 4,
                 iconcolor: Colors.white,
                 textcolor: Colors.white,
+                onpress: () {},
               ),
               SizedBox(
                 height: 15,
@@ -101,54 +106,26 @@ class _SearchJobState extends State<SearchJob> {
                 forcegroundcolor: Colors.transparent,
                 iconcolor: Colors.red,
                 textcolor: Color(0xff757575),
+                onpress: () {},
               ),
               SizedBox(
-                height: 150,
+                height: 120,
               ),
-              Center(
-                child: Column(
-                  children: [
-                    Text(
-                      'For any help',
-                      style: TextStyle(
-                        color: Color(0xff122f51),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      'Call at 16479',
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              )
+              Helpline(),
             ],
           ),
         ),
       ),
-
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
-        onPressed: () => {
+      floatingActionButton: FloatingArrowNextButton(
+        icon: Icons.arrow_forward,
+        onpress: () => {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => SignIn(),
+              builder: (context) => NameSignIn(),
             ),
           ),
         },
-        child: Icon(
-          Icons.arrow_forward,
-          size: 40,
-        ),
       ),
     );
   }

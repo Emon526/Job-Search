@@ -12,7 +12,7 @@ class CustomCardShapePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    var radius = 10.0;
+    var radius = 5.0;
 
     var paint = Paint();
     paint.shader = ui.Gradient.linear(

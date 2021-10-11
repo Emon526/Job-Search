@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:newdemo/screens/account/registration/contactdetails.dart';
 import 'package:newdemo/widgets/centericonfullwidthbutton.dart';
 import 'package:newdemo/widgets/helpline.dart';
 import 'package:newdemo/widgets/ordivider.dart';
@@ -17,6 +18,7 @@ class _CreateAccountState extends State<CreateAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         leading: IconButton(
@@ -26,8 +28,7 @@ class _CreateAccountState extends State<CreateAccount> {
             size: 36,
           ),
           onPressed: () {
-            // Navigator.push(
-            //     context, MaterialPageRoute(builder: (context) => ));
+            Navigator.pop(context);
           },
         ),
         elevation: 0,
@@ -67,6 +68,14 @@ class _CreateAccountState extends State<CreateAccount> {
             bordercolor: Colors.grey.withOpacity(0.5),
             buttonicon: LineIcons.googlePlus,
             textcolor: Colors.black,
+            onpress: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => ,
+              //   ),
+              // );
+            },
           ),
           CenterIconFullWidthButton(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
@@ -79,6 +88,14 @@ class _CreateAccountState extends State<CreateAccount> {
             buttonicon: LineIcons.facebookF,
             textcolor: Colors.black,
             sizeboxwidth: 10,
+            onpress: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => ,
+              //   ),
+              // );
+            },
           ),
           SizedBox(
             height: 20,
@@ -88,13 +105,21 @@ class _CreateAccountState extends State<CreateAccount> {
             height: 20,
           ),
           CenterIconFullWidthButton(
-            bordercolor: Colors.green,
+            bordercolor: Colors.transparent,
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             elevation: 10,
             buttoncolor: Colors.black,
             buttontext: 'Enter your information',
             textcolor: Colors.white,
             sizeboxwidth: 10,
+            onpress: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Information(),
+                ),
+              );
+            },
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.20,

@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:newdemo/screens/account/registration/registrationcategory.dart';
+
 import 'package:newdemo/widgets/field.dart';
+import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 import 'package:newdemo/widgets/helpline.dart';
 
 class NameSignIn extends StatelessWidget {
@@ -70,17 +73,16 @@ class NameSignIn extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
-        onPressed: () => {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => HomePage(),
-          //   ),
-          // ),
+      floatingActionButton: FloatingArrowNextButton(
+        icon: Icons.arrow_forward,
+        onpress: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => RegistrationCategory(),
+            ),
+          ),
         },
-        child: Icon(Icons.arrow_forward),
       ),
     );
   }

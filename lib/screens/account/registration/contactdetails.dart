@@ -3,18 +3,20 @@
 import 'package:flutter/material.dart';
 import 'package:newdemo/widgets/custombutton.dart';
 import 'package:newdemo/widgets/field.dart';
+import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class Information extends StatefulWidget {
+  const Information({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _InformationState createState() => _InformationState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _InformationState extends State<Information> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Color(0xff122f51),
         title: Text('Contact Details'),
@@ -112,9 +114,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
-        onPressed: () => {
+      floatingActionButton: FloatingArrowNextButton(
+        onpress: () => {
           // Navigator.push(
           //   context,
           //   MaterialPageRoute(
@@ -122,10 +123,7 @@ class _HomePageState extends State<HomePage> {
           //   ),
           // ),
         },
-        child: Icon(
-          Icons.done_rounded,
-          size: 40,
-        ),
+        icon: Icons.done,
       ),
     );
   }

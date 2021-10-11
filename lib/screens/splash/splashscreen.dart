@@ -3,7 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:newdemo/searchjob.dart';
+import 'package:newdemo/screens/home/searchjob.dart';
 
 class LogoScreen extends StatefulWidget {
   const LogoScreen({Key? key}) : super(key: key);
@@ -31,26 +31,28 @@ class _LogoScreenState extends State<LogoScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           children: [
             SizedBox(
-              height: 150,
+              height: size.height * .2,
             ),
             Image(
-              height: 170,
-              width: 170,
+              height: size.height * 0.2,
+              width: size.width * 0.35,
               image: AssetImage(
                 'images/logo1.png',
               ),
             ),
             SizedBox(
-              height: 150,
+              height: size.height * .15,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 150,
+              padding: EdgeInsets.symmetric(
+                horizontal: size.width * 0.3,
               ),
               child: LinearProgressIndicator(
                 backgroundColor: Colors.grey,
@@ -58,21 +60,21 @@ class _LogoScreenState extends State<LogoScreen> {
               ),
             ),
             SizedBox(
-              height: 140,
+              height: size.height * .23,
             ),
             Image(
-              width: 200,
+              width: size.width * 0.5,
               image: AssetImage(
                 'images/logo.png',
               ),
             ),
             SizedBox(
-              height: 20,
+              height: size.height * .02,
             ),
             Text(
               'v1.0.0.16 (85)',
               style: TextStyle(
-                fontSize: 16,
+                fontSize: size.width * 0.05,
                 color: Colors.grey,
               ),
             ),
