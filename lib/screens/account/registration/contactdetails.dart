@@ -41,15 +41,18 @@ class _InformationState extends State<Information> {
                 ),
                 Field(
                   boxtitle: 'District *',
-                  padding: 10,
+                  horizontalpadding: 10,
+                  verticalpadding: 10,
                 ),
                 Field(
                   boxtitle: 'Thana *',
-                  padding: 10,
+                  horizontalpadding: 10,
+                  verticalpadding: 10,
                 ),
                 Field(
                   boxtitle: 'House No./ Road /Village *',
-                  padding: 10,
+                  horizontalpadding: 10,
+                  verticalpadding: 10,
                 ),
                 SizedBox(
                   height: 20,
@@ -61,15 +64,18 @@ class _InformationState extends State<Information> {
                 ),
                 Field(
                   boxtitle: 'District *',
-                  padding: 10,
+                  horizontalpadding: 10,
+                  verticalpadding: 10,
                 ),
                 Field(
                   boxtitle: 'Thana *',
-                  padding: 10,
+                  horizontalpadding: 10,
+                  verticalpadding: 10,
                 ),
                 Field(
                   boxtitle: 'House No./ Road /Village *',
-                  padding: 10,
+                  horizontalpadding: 10,
+                  verticalpadding: 10,
                 ),
                 SizedBox(
                   height: 20,
@@ -81,7 +87,8 @@ class _InformationState extends State<Information> {
                 ),
                 Field(
                   boxtitle: 'Mobile No',
-                  padding: 10,
+                  horizontalpadding: 10,
+                  verticalpadding: 10,
                 ),
                 SizedBox(
                   height: 5,
@@ -97,7 +104,8 @@ class _InformationState extends State<Information> {
                 ),
                 Field(
                   boxtitle: 'Primary Email Address ',
-                  padding: 10,
+                  horizontalpadding: 10,
+                  verticalpadding: 10,
                 ),
                 SizedBox(
                   height: 5,

@@ -9,11 +9,12 @@ class CenterIconFullWidthButton extends StatelessWidget {
   final Color? forcegroundcolor;
   final Color bordercolor;
   final double? elevation;
-  final double? sizeboxwidth;
+  final double? iconandtextspace;
+  final double? buttonheight;
   final Color? iconcolor;
   final Color? textcolor;
   final EdgeInsetsGeometry? margin;
-  final Widget? widget;
+
   final VoidCallback onpress;
 
   const CenterIconFullWidthButton({
@@ -27,8 +28,8 @@ class CenterIconFullWidthButton extends StatelessWidget {
     this.iconcolor,
     this.textcolor,
     this.margin,
-    this.sizeboxwidth,
-    this.widget,
+    this.iconandtextspace,
+    this.buttonheight,
     required this.onpress,
   }) : super(key: key);
 
@@ -61,11 +62,7 @@ class CenterIconFullWidthButton extends StatelessWidget {
             ),
           ),
         ),
-        onPressed:
-            // () {
-            // Navigator.push(context, MaterialPageRoute(builder: (context) => onpress));
-            //   },
-            onpress,
+        onPressed: onpress,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -75,7 +72,8 @@ class CenterIconFullWidthButton extends StatelessWidget {
               size: 24,
             ),
             SizedBox(
-              width: sizeboxwidth,
+              width: iconandtextspace,
+              height: buttonheight,
             ),
             Text(
               buttontext,

@@ -1,21 +1,21 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:newdemo/screens/account/signin/createaccount.dart';
-import 'package:newdemo/model/listviewe.dart';
+import 'package:newdemo/screens/account/gender.dart';
+import 'package:newdemo/model/model.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 
 import 'package:newdemo/widgets/skillcard.dart';
 
-class Skills extends StatefulWidget {
-  const Skills({Key? key}) : super(key: key);
+class FunctionCategoryskills extends StatefulWidget {
+  const FunctionCategoryskills({Key? key}) : super(key: key);
 
   @override
-  _SkillsState createState() => _SkillsState();
+  _FunctionCategoryskillsState createState() => _FunctionCategoryskillsState();
 }
 
-class _SkillsState extends State<Skills> {
-  final _list = Skill.listValue();
+class _FunctionCategoryskillsState extends State<FunctionCategoryskills> {
+  final _list = Skill.functionlistValue();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +81,7 @@ class _SkillsState extends State<Skills> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => CreateAccount(),
+              builder: (context) => Gender(),
             ),
           ),
         },

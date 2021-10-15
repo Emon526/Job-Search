@@ -61,7 +61,8 @@ class NameSignIn extends StatelessWidget {
                   ),
                   Field(
                     boxtitle: 'Name',
-                    padding: 0,
+                    horizontalpadding: 0,
+                    verticalpadding: 0,
                   ),
                 ],
               ),

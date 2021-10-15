@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:newdemo/screens/skills/skills.dart';
+import 'package:newdemo/screens/account/signin/createaccount.dart';
+import 'package:newdemo/screens/skills/functioncategoryskills.dart';
+import 'package:newdemo/screens/skills/specialcategoryskills.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 import 'package:newdemo/widgets/helpline.dart';
 import 'package:newdemo/widgets/regcategorycard.dart';
@@ -59,7 +61,14 @@ class RegistrationCategory extends StatelessWidget {
               height: 20,
             ),
             RegestrationCategoryCard(
-              onpressed: () {},
+              onpressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FunctionCategoryskills(),
+                  ),
+                );
+              },
               customdesignstartColor: Colors.red,
               customdesignendColor: Colors.red,
               cardcolor: Colors.white,
@@ -72,7 +81,14 @@ class RegistrationCategory extends StatelessWidget {
             ),
             SizedBox(height: 10),
             RegestrationCategoryCard(
-              onpressed: () {},
+              onpressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SpecialCategorySkills(),
+                  ),
+                );
+              },
               customdesignstartColor: Color(0xff122f51),
               customdesignendColor: Color(0xff122f51),
               cardcolor: Colors.white,
@@ -96,7 +112,7 @@ class RegistrationCategory extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => Skills(),
+              builder: (context) => CreateAccount(),
             ),
           ),
         },

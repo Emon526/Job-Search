@@ -5,17 +5,22 @@ import 'package:flutter/material.dart';
 class Field extends StatelessWidget {
   final String boxtitle;
 
-  final double padding;
+  final double horizontalpadding;
+  final double verticalpadding;
   const Field({
     Key? key,
     required this.boxtitle,
-    required this.padding,
+    required this.horizontalpadding,
+    required this.verticalpadding,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(padding),
+      padding: EdgeInsets.symmetric(
+        horizontal: horizontalpadding,
+        vertical: verticalpadding,
+      ),
       child: TextField(
         decoration: InputDecoration(
           labelText: boxtitle,

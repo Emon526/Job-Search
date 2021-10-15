@@ -4,8 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:newdemo/screens/account/registration/registrationcategory.dart';
 import 'package:newdemo/screens/account/signin/createaccount.dart';
-import 'package:newdemo/screens/registration/registrationcategory.dart';
+
 import 'package:newdemo/widgets/field.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 
@@ -50,7 +51,8 @@ class SignIn extends StatelessWidget {
               ),
               Field(
                 boxtitle: 'Username, Email or Mobile No',
-                padding: 0,
+                horizontalpadding: 0,
+                verticalpadding: 0,
               ),
               SizedBox(
                 height: 15,

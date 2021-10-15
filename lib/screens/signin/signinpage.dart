@@ -50,7 +50,8 @@ class SignIn extends StatelessWidget {
               ),
               Field(
                 boxtitle: 'Username, Email or Mobile No',
-                padding: 0,
+                horizontalpadding: 0,
+                verticalpadding: 0,
               ),
               SizedBox(
                 height: 15,

@@ -59,7 +59,7 @@ class _CreateAccountState extends State<CreateAccount> {
           ),
           CenterIconFullWidthButton(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            sizeboxwidth: 10,
+            iconandtextspace: 10,
             elevation: 0,
             forcegroundcolor: Colors.white,
             buttoncolor: Colors.white,
@@ -87,7 +87,7 @@ class _CreateAccountState extends State<CreateAccount> {
             bordercolor: Colors.grey.withOpacity(0.5),
             buttonicon: LineIcons.facebookF,
             textcolor: Colors.black,
-            sizeboxwidth: 10,
+            iconandtextspace: 10,
             onpress: () {
               // Navigator.push(
               //   context,
@@ -111,7 +111,7 @@ class _CreateAccountState extends State<CreateAccount> {
             buttoncolor: Colors.black,
             buttontext: 'Enter your information',
             textcolor: Colors.white,
-            sizeboxwidth: 10,
+            iconandtextspace: 10,
             onpress: () {
               Navigator.push(
                 context,
