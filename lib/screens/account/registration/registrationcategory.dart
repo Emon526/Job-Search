@@ -93,7 +93,7 @@ class RegistrationCategory extends StatelessWidget {
               customdesignendColor: Color(0xff122f51),
               cardcolor: Colors.white,
               elevation: 3,
-              iconData: Icons.handyman,
+              iconData: Icons.construction,
               categorytitle: 'Special Skilled Category',
               categorysubtitle: 'Computer Operator, Mechanic/ Technician',
               iconColor: Colors.white,

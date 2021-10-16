@@ -5,14 +5,14 @@ import 'package:newdemo/widgets/custombutton.dart';
 import 'package:newdemo/widgets/field.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 
-class Information extends StatefulWidget {
-  const Information({Key? key}) : super(key: key);
+class ContactDetails extends StatefulWidget {
+  const ContactDetails({Key? key}) : super(key: key);
 
   @override
-  _InformationState createState() => _InformationState();
+  _ContactDetailsState createState() => _ContactDetailsState();
 }
 
-class _InformationState extends State<Information> {
+class _ContactDetailsState extends State<ContactDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

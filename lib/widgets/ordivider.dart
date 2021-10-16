@@ -12,9 +12,9 @@ class OrDivider extends StatelessWidget {
         Expanded(
           child: Divider(
             color: Colors.black.withOpacity(0.5),
-            indent: 20,
+            indent: 0,
             thickness: 1,
-            endIndent: 10,
+            endIndent: 20,
           ),
         ),
         Text(
@@ -29,7 +29,7 @@ class OrDivider extends StatelessWidget {
             color: Colors.black.withOpacity(0.5),
             indent: 20,
             thickness: 1,
-            endIndent: 10,
+            endIndent: 0,
           ),
         ),
       ],

@@ -44,7 +44,7 @@ class _LogoScreenState extends State<LogoScreen> {
               height: size.height * 0.2,
               width: size.width * 0.35,
               image: AssetImage(
-                'images/logo1.png',
+                'asset/images/logo1.png',
               ),
             ),
             SizedBox(
@@ -65,7 +65,7 @@ class _LogoScreenState extends State<LogoScreen> {
             Image(
               width: size.width * 0.5,
               image: AssetImage(
-                'images/logo.png',
+                'asset/images/logo.png',
               ),
             ),
             SizedBox(

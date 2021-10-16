@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:newdemo/screens/account/gender.dart';
-import 'package:newdemo/model/model.dart';
+import 'package:newdemo/screens/account/registration/gender.dart';
+import 'package:newdemo/model/skillmodel.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';
+import 'package:newdemo/widgets/progressindicator.dart';
 
 import 'package:newdemo/widgets/skillcard.dart';
 
@@ -43,13 +44,7 @@ class _FunctionCategoryskillsState extends State<FunctionCategoryskills> {
             SizedBox(
               height: 25,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
-              child: LinearProgressIndicator(
-                color: Color(0xff15a211),
-                backgroundColor: Color(0xffe9e9e9),
-              ),
-            ),
+            CustomProgressIndicator(value: 0.5),
             SizedBox(
               height: 40,
             ),
