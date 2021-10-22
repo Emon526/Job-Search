@@ -13,6 +13,7 @@ class RegistrationCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -47,7 +48,7 @@ class RegistrationCategory extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: size.height * 0.040,
             ),
             Text(
               'Please choose your relevant type',
@@ -58,7 +59,7 @@ class RegistrationCategory extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: size.height * 0.025,
             ),
             RegestrationCategoryCard(
               onpressed: () {
@@ -79,7 +80,9 @@ class RegistrationCategory extends StatelessWidget {
               iconColor: Colors.white,
               titleColor: Colors.red,
             ),
-            SizedBox(height: 10),
+            SizedBox(
+              height: size.height * 0.020,
+            ),
             RegestrationCategoryCard(
               onpressed: () {
                 Navigator.push(
@@ -100,7 +103,7 @@ class RegistrationCategory extends StatelessWidget {
               titleColor: Color(0xff122f51),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.3,
+              height: size.height * 0.3,
             ),
             Helpline(),
           ],

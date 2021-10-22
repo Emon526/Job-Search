@@ -18,6 +18,7 @@ class CreateAccount extends StatefulWidget {
 class _CreateAccountState extends State<CreateAccount> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -39,18 +40,18 @@ class _CreateAccountState extends State<CreateAccount> {
       body: Column(
         children: [
           SizedBox(
-            height: 25,
+            height: size.height * 0.035,
           ),
           CustomProgressIndicator(value: 0.5),
           SizedBox(
-            height: 50,
+            height: size.height * 0.065,
           ),
           Text(
             'Create Your Free BdJobs Account',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
           SizedBox(
-            height: 40,
+            height: size.height * 0.055,
           ),
           CenterIconFullWidthButton(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
@@ -93,11 +94,11 @@ class _CreateAccountState extends State<CreateAccount> {
             },
           ),
           SizedBox(
-            height: 20,
+            height: size.height * 0.025,
           ),
           OrDivider(),
           SizedBox(
-            height: 20,
+            height: size.height * 0.025,
           ),
           CenterIconFullWidthButton(
             bordercolor: Colors.transparent,
@@ -117,7 +118,7 @@ class _CreateAccountState extends State<CreateAccount> {
             },
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.20,
+            height: size.height * 0.20,
           ),
           Helpline(),
         ],

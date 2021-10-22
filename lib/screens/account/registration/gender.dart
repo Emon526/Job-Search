@@ -35,6 +35,7 @@ class _GenderState extends State<Gender> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -68,21 +69,21 @@ class _GenderState extends State<Gender> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 25,
+                height: size.height * 0.035,
               ),
               CustomProgressIndicator(value: 0.6),
               SizedBox(
-                height: 50,
+                height: size.height * 0.065,
               ),
               Text(
                 'Select Gender',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               SizedBox(
-                height: 25,
+                height: size.height * 0.035,
               ),
               Container(
-                height: 200,
+                height: size.height * 0.28,
                 child: ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: _genderlist.length,
@@ -114,7 +115,7 @@ class _GenderState extends State<Gender> {
                 ),
               ),
               SizedBox(
-                height: 250,
+                height: size.height * 0.30,
               ),
               Helpline(),
             ],

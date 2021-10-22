@@ -12,6 +12,7 @@ class NameSignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -42,7 +43,7 @@ class NameSignIn extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: size.height * 0.040,
             ),
             Container(
               padding: EdgeInsets.all(10),
@@ -57,7 +58,7 @@ class NameSignIn extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 25,
+                    height: size.height * 0.035,
                   ),
                   Field(
                     boxtitle: 'Name',

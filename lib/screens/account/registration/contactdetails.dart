@@ -15,6 +15,7 @@ class ContactDetails extends StatefulWidget {
 class _ContactDetailsState extends State<ContactDetails> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -55,7 +56,7 @@ class _ContactDetailsState extends State<ContactDetails> {
                   verticalpadding: 10,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: size.height * 0.025,
                 ),
                 ListTile(
                   title: Text(
@@ -78,7 +79,7 @@ class _ContactDetailsState extends State<ContactDetails> {
                   verticalpadding: 10,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: size.height * 0.025,
                 ),
                 ListTile(
                   title: Text(
@@ -115,7 +116,7 @@ class _ContactDetailsState extends State<ContactDetails> {
                   text: 'Add Email Address',
                 ),
                 SizedBox(
-                  height: 50,
+                  height: size.height * 0.065,
                 ),
               ],
             ),

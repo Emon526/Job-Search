@@ -18,6 +18,7 @@ class _SpecialCategorySkillsState extends State<SpecialCategorySkills> {
   final _list = Skill.speciallistValue();
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -41,18 +42,18 @@ class _SpecialCategorySkillsState extends State<SpecialCategorySkills> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 25,
+              height: size.height * 0.035,
             ),
             CustomProgressIndicator(value: 0.5),
             SizedBox(
-              height: 40,
+              height: size.height * 0.055,
             ),
             Text(
               'Select skills from the list',
               style: TextStyle(fontSize: 21),
             ),
             SizedBox(
-              height: 30,
+              height: size.height * 0.040,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.58,

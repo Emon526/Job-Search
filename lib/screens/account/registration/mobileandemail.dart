@@ -18,6 +18,7 @@ class NameOrEmail extends StatefulWidget {
 class _NameOrEmailState extends State<NameOrEmail> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xffffffff),
@@ -50,18 +51,18 @@ class _NameOrEmailState extends State<NameOrEmail> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 25,
+                height: size.height * 0.035,
               ),
               CustomProgressIndicator(value: 0.8),
               SizedBox(
-                height: 50,
+                height: size.height * 0.065,
               ),
               Text(
                 'Provide your Mobile No and Email Address (atleast one)',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               SizedBox(
-                height: 25,
+                height: size.height * 0.035,
               ),
               Field(
                 boxtitle: 'Country Code',
@@ -78,11 +79,11 @@ class _NameOrEmailState extends State<NameOrEmail> {
                 verticalpadding: 7.5,
               ),
               SizedBox(
-                height: 25,
+                height: size.height * 0.035,
               ),
               OrDivider(),
               SizedBox(
-                height: 25,
+                height: size.height * 0.035,
               ),
               Field(
                 boxtitle: 'Email',
@@ -90,7 +91,7 @@ class _NameOrEmailState extends State<NameOrEmail> {
                 verticalpadding: 0,
               ),
               SizedBox(
-                height: 150,
+                height: size.height * 0.20,
               ),
               Helpline(),
             ],

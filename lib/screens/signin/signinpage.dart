@@ -14,6 +14,7 @@ class SignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -46,7 +47,7 @@ class SignIn extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 47,
+                height: size.height * 0.065,
               ),
               Field(
                 boxtitle: 'Username, Email or Mobile No',
@@ -54,7 +55,7 @@ class SignIn extends StatelessWidget {
                 verticalpadding: 0,
               ),
               SizedBox(
-                height: 15,
+                height: size.height * 0.020,
               ),
               Text(
                 'Forgot Username?',
@@ -65,7 +66,7 @@ class SignIn extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 55,
+                height: size.height * 0.075,
               ),
               Center(
                 child: Column(
@@ -79,7 +80,7 @@ class SignIn extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 0.025,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -105,7 +106,7 @@ class SignIn extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 0.025,
                     ),
                     Text(
                       'Don\'t have an account?',
@@ -116,7 +117,7 @@ class SignIn extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 0.025,
                     ),
                     TextButton(
                       onPressed: () {

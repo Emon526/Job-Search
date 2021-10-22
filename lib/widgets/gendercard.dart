@@ -27,8 +27,9 @@ class Gendercard extends StatefulWidget {
 class _GendercardState extends State<Gendercard> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      height: 45,
+      height: size.height * 0.061,
       margin: EdgeInsets.symmetric(
         vertical: 10,
       ),

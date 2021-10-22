@@ -24,6 +24,7 @@ class _SetUserIDState extends State<SetUserID> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xffffffff),
@@ -58,20 +59,20 @@ class _SetUserIDState extends State<SetUserID> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 20,
+                height: size.height * 0.025,
               ),
               CustomProgressIndicator(
                 value: 0.2,
               ),
               SizedBox(
-                height: 40,
+                height: size.height * 0.055,
               ),
               Text(
                 'Set as User ID (Email Address /\nMobile)',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               SizedBox(
-                height: 20,
+                height: size.height * 0.025,
               ),
               Container(
                 decoration: BoxDecoration(
@@ -106,7 +107,7 @@ class _SetUserIDState extends State<SetUserID> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: size.height * 0.025,
               ),
               Container(
                 decoration: BoxDecoration(
@@ -141,21 +142,24 @@ class _SetUserIDState extends State<SetUserID> {
                 ),
               ),
               SizedBox(
-                height: 30,
+                height: size.height * 0.040,
               ),
               Text(
                 'Type Password',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
               SizedBox(
-                height: 10,
+                height: size.height * 0.020,
               ),
               Text('Use at least 8 to 12 characters'),
               SizedBox(
-                height: 20,
+                height: size.height * 0.025,
               ),
               Container(
-                height: 50,
+                height: size.height * 0.065,
                 child: TextFormField(
                   keyboardType: TextInputType.text,
                   controller: _userPasswordController1,
@@ -182,10 +186,10 @@ class _SetUserIDState extends State<SetUserID> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: size.height * 0.025,
               ),
               Container(
-                height: 50,
+                height: size.height * 0.065,
                 child: TextFormField(
                   keyboardType: TextInputType.text,
                   controller: _userPasswordController2,
@@ -212,7 +216,7 @@ class _SetUserIDState extends State<SetUserID> {
                 ),
               ),
               SizedBox(
-                height: 100,
+                height: size.height * 0.15,
               ),
               Helpline()
             ],

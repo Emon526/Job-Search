@@ -9,6 +9,7 @@ class Information extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -29,7 +30,7 @@ class Information extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 15,
+                  height: size.height * 0.020,
                 ),
 
                 InformationListTile(
@@ -65,7 +66,7 @@ class Information extends StatelessWidget {
                   onpress: () {},
                 ),
                 SizedBox(
-                  height: 50,
+                  height: size.height * 0.065,
                 ),
 
                 //  EDU
@@ -75,7 +76,7 @@ class Information extends StatelessWidget {
                       fontSize: 17,
                     )),
                 SizedBox(
-                  height: 15,
+                  height: size.height * 0.020,
                 ),
 
                 InformationListTile(
@@ -94,7 +95,7 @@ class Information extends StatelessWidget {
                   onpress: () {},
                 ),
                 SizedBox(
-                  height: 20,
+                  height: size.height * 0.025,
                 ),
 
                 SizedBox(
@@ -104,7 +105,7 @@ class Information extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: size.height * 0.020,
                 ),
                 Text('Emoployment History',
                     style: TextStyle(
@@ -112,7 +113,7 @@ class Information extends StatelessWidget {
                       fontSize: 17,
                     )),
                 SizedBox(
-                  height: 15,
+                  height: size.height * 0.020,
                 ),
 
                 InformationListTile(
@@ -126,7 +127,7 @@ class Information extends StatelessWidget {
                   onpress: () {},
                 ),
                 SizedBox(
-                  height: 20,
+                  height: size.height * 0.025,
                 ),
                 SizedBox(
                   child: Divider(
@@ -135,7 +136,7 @@ class Information extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: size.height * 0.020,
                 ),
                 Text('Other Information',
                     style: TextStyle(
@@ -143,7 +144,7 @@ class Information extends StatelessWidget {
                       fontSize: 17,
                     )),
                 SizedBox(
-                  height: 15,
+                  height: size.height * 0.020,
                 ),
 
                 InformationListTile(

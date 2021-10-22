@@ -14,6 +14,7 @@ class Congratulations extends StatefulWidget {
 class _CongratulationsState extends State<Congratulations> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -47,7 +48,7 @@ class _CongratulationsState extends State<Congratulations> {
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: size.height * 0.020,
               ),
               Text(
                 'Your account has been created successfully',
@@ -57,7 +58,7 @@ class _CongratulationsState extends State<Congratulations> {
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: size.height * 0.055,
               ),
               CenterIconFullWidthButton(
                   iconandtextspace: 10,
