@@ -16,6 +16,7 @@ class SpecialCategorySkills extends StatefulWidget {
 
 class _SpecialCategorySkillsState extends State<SpecialCategorySkills> {
   final _list = Skill.speciallistValue();
+  var selected;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -61,8 +62,22 @@ class _SpecialCategorySkillsState extends State<SpecialCategorySkills> {
                 itemCount: _list.length,
                 itemBuilder: (context, index) {
                   var list = _list[index];
-                  return SkillCard(
-                    text: list.name,
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selected = index;
+                      });
+                    },
+                    child: SkillCard(
+                      bordercolor: selected == index
+                          ? Color(0xff2e64a4)
+                          : Colors.grey.withOpacity(0.7),
+                      textcolor:
+                          selected == index ? Colors.white : Colors.black,
+                      color:
+                          selected == index ? Color(0xff2e64a4) : Colors.white,
+                      text: list.name,
+                    ),
                   );
                 },
               ),

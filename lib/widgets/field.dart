@@ -23,11 +23,28 @@ class Field extends StatelessWidget {
       ),
       child: TextField(
         decoration: InputDecoration(
-          labelText: boxtitle,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.black,
+                width: 0.5,
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(10.0),
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.grey.withOpacity(0.5),
+                width: 1.0,
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(10.0),
+              ),
+            ),
+            labelText: boxtitle,
+            labelStyle: TextStyle(
+              color: Colors.black,
+            )),
       ),
     );
   }

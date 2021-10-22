@@ -17,6 +17,7 @@ class FunctionCategoryskills extends StatefulWidget {
 
 class _FunctionCategoryskillsState extends State<FunctionCategoryskills> {
   final _list = Skill.functionlistValue();
+  var selected;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -62,8 +63,22 @@ class _FunctionCategoryskillsState extends State<FunctionCategoryskills> {
                 itemCount: _list.length,
                 itemBuilder: (context, index) {
                   var list = _list[index];
-                  return SkillCard(
-                    text: list.name,
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selected = index;
+                      });
+                    },
+                    child: SkillCard(
+                      bordercolor: selected == index
+                          ? Color(0xff2e64a4)
+                          : Colors.grey.withOpacity(0.7),
+                      textcolor:
+                          selected == index ? Colors.white : Colors.black,
+                      color:
+                          selected == index ? Color(0xff2e64a4) : Colors.white,
+                      text: list.name,
+                    ),
                   );
                 },
               ),

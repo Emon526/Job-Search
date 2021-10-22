@@ -39,6 +39,9 @@ dependencies:
   lottie: ^1.2.1
   country_code_picker: ^2.0.2
   country_list_pick: ^1.0.0+3
+  flutter_localizations: 
+    sdk: flutter
+    version: ^0.0.0
 
 
 dev_dependencies:
