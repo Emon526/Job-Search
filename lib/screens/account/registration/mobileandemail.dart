@@ -80,6 +80,9 @@ class _NameOrEmailState extends State<NameOrEmail> {
                 child: Column(
                   children: [
                     Field(
+                      fillcolor: Colors.transparent,
+                      levelcolor: Colors.grey,
+                      obscureText: false,
                       controller: _countrycontroller,
                       validatortext: 'Enter Your Country Code',
                       boxtitle: 'Country Code',
@@ -91,6 +94,9 @@ class _NameOrEmailState extends State<NameOrEmail> {
                     // ),
 
                     Field(
+                      fillcolor: Colors.transparent,
+                      levelcolor: Colors.grey,
+                      obscureText: false,
                       controller: _mobilecontroller,
                       validatortext: 'Enter Your Mobile No',
                       boxtitle: 'Mobile Number',
@@ -105,6 +111,9 @@ class _NameOrEmailState extends State<NameOrEmail> {
                       height: size.height * 0.035,
                     ),
                     Field(
+                      fillcolor: Colors.transparent,
+                      levelcolor: Colors.grey,
+                      obscureText: false,
                       controller: _emailcontroller,
                       validatortext: 'Enter Your Email',
                       boxtitle: 'Email',

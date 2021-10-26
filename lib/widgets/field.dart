@@ -4,10 +4,19 @@ import 'package:flutter/material.dart';
 
 class Field extends StatelessWidget {
   final String boxtitle;
+  final bool? enabled;
+  final bool obscureText;
+  final Function(String)? onchanged;
+  final TextStyle? style;
 
   final String validatortext;
   final TextEditingController controller;
   final TextInputType? keyboardtype;
+  final TextInputAction? textInputAction;
+  final Widget? prefixicon;
+  final Widget? sufixicon;
+  final Color fillcolor;
+  final Color levelcolor;
 
   final double horizontalpadding;
   final double verticalpadding;
@@ -19,6 +28,15 @@ class Field extends StatelessWidget {
     required this.validatortext,
     required this.controller,
     this.keyboardtype,
+    this.textInputAction,
+    this.prefixicon,
+    this.enabled,
+    this.onchanged,
+    this.style,
+    required this.fillcolor,
+    required this.obscureText,
+    this.sufixicon,
+    required this.levelcolor,
   }) : super(key: key);
 
   @override
@@ -29,8 +47,12 @@ class Field extends StatelessWidget {
         vertical: verticalpadding,
       ),
       child: TextFormField(
+        obscureText: obscureText,
+        style: style,
+        enabled: enabled,
         controller: controller,
         keyboardType: keyboardtype,
+        textInputAction: textInputAction,
         validator: (value) {
           if (value!.isEmpty || !value.contains('')) {
             return validatortext;
@@ -38,11 +60,25 @@ class Field extends StatelessWidget {
             return null;
           }
         },
+        onChanged: onchanged,
         decoration: InputDecoration(
+          filled: true,
+          fillColor: fillcolor,
+          prefixIcon: prefixicon,
+          suffixIcon: sufixicon,
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.grey.withOpacity(0.5),
+              width: 1.0,
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(10.0),
+            ),
+          ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.black,
-              width: 0.5,
+              color: Colors.grey.withOpacity(0.5),
+              width: 1.0,
             ),
             borderRadius: BorderRadius.all(
               Radius.circular(10.0),
@@ -59,7 +95,7 @@ class Field extends StatelessWidget {
           ),
           labelText: boxtitle,
           labelStyle: TextStyle(
-            color: Colors.black,
+            color: levelcolor,
           ),
         ),
       ),

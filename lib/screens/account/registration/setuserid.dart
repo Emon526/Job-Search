@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables, sized_box_for_whitespace, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:newdemo/screens/account/registration/congratulation.dart';
+import 'package:newdemo/widgets/field.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 import 'package:newdemo/widgets/helpline.dart';
 import 'package:newdemo/widgets/progressindicator.dart';
@@ -16,12 +17,12 @@ class SetUserID extends StatefulWidget {
 class _SetUserIDState extends State<SetUserID> {
   final _mobilenumber = TextEditingController();
   final _emailaddress = TextEditingController();
+
   final _userPasswordController1 = TextEditingController();
   final _userPasswordController2 = TextEditingController();
-  var emailvalue = '';
-  var mobilevalue = '';
   var _passwordVisible = false;
-
+  var emaildatainputted = true;
+  var passdatainputted = true;
   final _useridformkey = GlobalKey<FormState>();
 
   void _submitdata() {
@@ -66,121 +67,115 @@ class _SetUserIDState extends State<SetUserID> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: size.height * 0.025,
+                height: size.height * 0.020,
               ),
               CustomProgressIndicator(
                 value: 0.2,
               ),
               SizedBox(
-                height: size.height * 0.055,
+                height: size.height * 0.040,
               ),
               Text(
                 'Set as User ID (Email Address /\nMobile)',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               SizedBox(
-                height: size.height * 0.025,
+                height: size.height * 0.020,
               ),
               Form(
                 key: _useridformkey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all(
-                          color: emailvalue != ''
-                              ? Color(0xff2e64a4)
-                              : Colors.grey,
-                        ),
-                        color:
-                            emailvalue != '' ? Color(0xff2e64a4) : Colors.white,
+                    Field(
+                      levelcolor: _emailaddress.text.isNotEmpty
+                          ? Colors.white
+                          : Colors.grey,
+                      obscureText: false,
+                      fillcolor: _emailaddress.text.isNotEmpty
+                          ? Color(0xff2e64a4)
+                          : Colors.white,
+                      style: TextStyle(
+                        color: _emailaddress.text.isNotEmpty
+                            ? Colors.white
+                            : Colors.grey,
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: TextFormField(
-                          validator: (value) {
-                            if (value!.isEmpty || !value.contains('')) {
-                              return 'Enter Email';
-                            } else {
-                              return null;
-                            }
-                          },
-                          style: TextStyle(
-                            color:
-                                emailvalue != '' ? Colors.white : Colors.grey,
-                          ),
-                          controller: _emailaddress,
-                          keyboardType: TextInputType.emailAddress,
-                          onChanged: (text) => {
+                      enabled: emaildatainputted,
+                      keyboardtype: TextInputType.emailAddress,
+                      textInputAction: TextInputAction.next,
+                      onchanged: (text) => {
+                        if (_emailaddress.text.isNotEmpty)
+                          {
                             setState(() {
-                              emailvalue = text;
+                              passdatainputted = false;
+                            }),
+                          }
+                        else
+                          {
+                            setState(() {
+                              passdatainputted = true;
                             }),
                           },
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: 'Email Address',
-                            icon: Icon(
-                              Icons.mail,
-                              color:
-                                  emailvalue != '' ? Colors.white : Colors.grey,
-                            ),
-                          ),
-                        ),
+                      },
+                      boxtitle: 'Email Address',
+                      horizontalpadding: 0,
+                      verticalpadding: 0,
+                      validatortext: 'Please Enter Valid Email',
+                      controller: _emailaddress,
+                      prefixicon: Icon(
+                        Icons.mail,
+                        color: _emailaddress.text.isNotEmpty
+                            ? Colors.white
+                            : Colors.grey,
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 0.025,
+                      height: size.height * 0.020,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all(
-                          color: mobilevalue != ''
-                              ? Color(0xff2e64a4)
-                              : Colors.grey,
-                        ),
-                        color: mobilevalue != ''
-                            ? Color(0xff2e64a4)
-                            : Colors.white,
+                    Field(
+                      levelcolor: _mobilenumber.text.isNotEmpty
+                          ? Colors.white
+                          : Colors.grey,
+                      obscureText: false,
+                      fillcolor: _mobilenumber.text.isNotEmpty
+                          ? Color(0xff2e64a4)
+                          : Colors.white,
+                      style: TextStyle(
+                        color: _mobilenumber.text.isNotEmpty
+                            ? Colors.white
+                            : Colors.grey,
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: TextFormField(
-                          validator: (value) {
-                            if (value!.isEmpty || !value.contains('')) {
-                              return 'Enter mobile no';
-                            } else {
-                              return null;
-                            }
-                          },
-                          style: TextStyle(
-                            color:
-                                mobilevalue != '' ? Colors.white : Colors.grey,
-                          ),
-                          controller: _mobilenumber,
-                          keyboardType: TextInputType.number,
-                          onChanged: (text) => {
+                      enabled: passdatainputted,
+                      keyboardtype: TextInputType.number,
+                      textInputAction: TextInputAction.next,
+                      onchanged: (text) => {
+                        if (_mobilenumber.text.isNotEmpty)
+                          {
                             setState(() {
-                              mobilevalue = text;
+                              emaildatainputted = false;
+                            }),
+                          }
+                        else
+                          {
+                            setState(() {
+                              emaildatainputted = true;
                             }),
                           },
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: 'Mobile Number',
-                            icon: Icon(
-                              Icons.phone_android_rounded,
-                              color: mobilevalue != ''
-                                  ? Colors.white
-                                  : Colors.grey,
-                            ),
-                          ),
-                        ),
+                      },
+                      boxtitle: 'Mobile Number',
+                      horizontalpadding: 0,
+                      verticalpadding: 0,
+                      validatortext: 'Please Enter Valid Mobile No',
+                      controller: _mobilenumber,
+                      prefixicon: Icon(
+                        Icons.phone_android_rounded,
+                        color: _mobilenumber.text.isNotEmpty
+                            ? Colors.white
+                            : Colors.grey,
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 0.040,
+                      height: size.height * 0.030,
                     ),
                     Text(
                       'Type Password',
@@ -194,84 +189,66 @@ class _SetUserIDState extends State<SetUserID> {
                     ),
                     Text('Use at least 8 to 12 characters'),
                     SizedBox(
-                      height: size.height * 0.025,
+                      height: size.height * 0.020,
                     ),
-                    Container(
-                      height: size.height * 0.065,
-                      child: TextFormField(
-                        validator: (value) {
-                          if (value!.isEmpty || !value.contains('')) {
-                            return 'Enter Password';
-                          } else {
-                            return null;
-                          }
-                        },
-                        keyboardType: TextInputType.text,
-                        controller: _userPasswordController1,
-                        obscureText: !_passwordVisible,
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              _passwordVisible
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                              color: Colors.grey,
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                _passwordVisible = !_passwordVisible;
-                              });
-                            },
-                          ),
+                    Field(
+                      levelcolor: Colors.grey,
+                      obscureText: !_passwordVisible,
+                      fillcolor: Colors.transparent,
+                      boxtitle: 'Password',
+                      horizontalpadding: 0,
+                      verticalpadding: 0,
+                      validatortext: 'Enter Password',
+                      controller: _userPasswordController1,
+                      keyboardtype: TextInputType.text,
+                      textInputAction: TextInputAction.next,
+                      sufixicon: GestureDetector(
+                        child: Icon(
+                          _passwordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: Colors.grey,
                         ),
+                        onTap: () {
+                          setState(() {
+                            _passwordVisible = !_passwordVisible;
+                          });
+                        },
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 0.025,
+                      height: size.height * 0.020,
                     ),
-                    Container(
-                      height: size.height * 0.065,
-                      child: TextFormField(
-                        validator: (value) {
-                          if (value!.isEmpty || !value.contains('')) {
-                            return 'Enter Confirm Password';
-                          } else {
-                            return null;
-                          }
-                        },
-                        keyboardType: TextInputType.text,
-                        controller: _userPasswordController2,
-                        obscureText: !_passwordVisible,
-                        decoration: InputDecoration(
-                          labelText: 'Confirm Password',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              _passwordVisible
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                              color: Colors.grey,
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                _passwordVisible = !_passwordVisible;
-                              });
-                            },
-                          ),
+                    Field(
+                      levelcolor: Colors.grey,
+                      obscureText: !_passwordVisible,
+                      fillcolor: Colors.transparent,
+                      boxtitle: 'Confirm Password',
+                      horizontalpadding: 0,
+                      verticalpadding: 0,
+                      validatortext: 'Enter Confirm Password',
+                      controller: _userPasswordController2,
+                      keyboardtype: TextInputType.text,
+                      textInputAction: TextInputAction.done,
+                      sufixicon: GestureDetector(
+                        child: Icon(
+                          _passwordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: Colors.grey,
                         ),
+                        onTap: () {
+                          setState(() {
+                            _passwordVisible = !_passwordVisible;
+                          });
+                        },
                       ),
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                height: size.height * 0.15,
+                height: size.height * 0.10,
               ),
               Helpline()
             ],

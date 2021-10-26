@@ -61,6 +61,9 @@ class SignIn extends StatelessWidget {
               Form(
                 key: _signinformkey,
                 child: Field(
+                  fillcolor: Colors.transparent,
+                  levelcolor: Colors.grey,
+                  obscureText: false,
                   controller: _usernamecontroller,
                   validatortext: 'Enter Your Username, Email or Mobile No',
                   boxtitle: 'Username, Email or Mobile No',

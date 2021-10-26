@@ -78,6 +78,9 @@ class _NameSignInState extends State<NameSignIn> {
                   Form(
                     key: _nameloginformkey,
                     child: Field(
+                      fillcolor: Colors.transparent,
+                      levelcolor: Colors.grey,
+                      obscureText: false,
                       controller: _namecontroller,
                       validatortext: 'Enter Your name',
                       boxtitle: 'Name',

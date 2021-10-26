@@ -61,6 +61,9 @@ class _ContactDetailsState extends State<ContactDetails> {
                     ),
                   ),
                   Field(
+                    fillcolor: Colors.transparent,
+                    levelcolor: Colors.grey,
+                    obscureText: false,
                     controller: _presentdistrictcontroller,
                     validatortext: 'Please Enter Present Address District',
                     boxtitle: 'District *',
@@ -68,6 +71,9 @@ class _ContactDetailsState extends State<ContactDetails> {
                     verticalpadding: 10,
                   ),
                   Field(
+                    fillcolor: Colors.transparent,
+                    levelcolor: Colors.grey,
+                    obscureText: false,
                     controller: _perdistrictcontroller,
                     validatortext: 'Please Enter Present Address Thana',
                     boxtitle: 'Thana *',
@@ -75,6 +81,9 @@ class _ContactDetailsState extends State<ContactDetails> {
                     verticalpadding: 10,
                   ),
                   Field(
+                    fillcolor: Colors.transparent,
+                    levelcolor: Colors.grey,
+                    obscureText: false,
                     controller: _presentthanacontroller,
                     validatortext: 'Please Enter Present Address House No.',
                     boxtitle: 'House No./ Road /Village *',
@@ -90,6 +99,9 @@ class _ContactDetailsState extends State<ContactDetails> {
                     ),
                   ),
                   Field(
+                    fillcolor: Colors.transparent,
+                    levelcolor: Colors.grey,
+                    obscureText: false,
                     controller: _premanentdistrictcontroller,
                     validatortext: 'Please Enter Permanent Address District',
                     boxtitle: 'District *',
@@ -97,6 +109,9 @@ class _ContactDetailsState extends State<ContactDetails> {
                     verticalpadding: 10,
                   ),
                   Field(
+                    fillcolor: Colors.transparent,
+                    levelcolor: Colors.grey,
+                    obscureText: false,
                     controller: _permanentthanacontroller,
                     validatortext: 'Please Enter Permanent Address Thana',
                     boxtitle: 'Thana *',
@@ -104,6 +119,9 @@ class _ContactDetailsState extends State<ContactDetails> {
                     verticalpadding: 10,
                   ),
                   Field(
+                    fillcolor: Colors.transparent,
+                    levelcolor: Colors.grey,
+                    obscureText: false,
                     controller: _perhousenocontroller,
                     validatortext: 'Please Enter Permanent Address House No.',
                     boxtitle: 'House No./ Road /Village *',
@@ -119,6 +137,9 @@ class _ContactDetailsState extends State<ContactDetails> {
                     ),
                   ),
                   Field(
+                    fillcolor: Colors.transparent,
+                    levelcolor: Colors.grey,
+                    obscureText: false,
                     controller: _mobilecontroller,
                     validatortext: 'Please Enter Your Mobile No.',
                     boxtitle: 'Mobile No',
@@ -138,6 +159,9 @@ class _ContactDetailsState extends State<ContactDetails> {
                     ),
                   ),
                   Field(
+                    fillcolor: Colors.transparent,
+                    levelcolor: Colors.grey,
+                    obscureText: false,
                     controller: _emailcontroller,
                     validatortext: 'Please Enter Your Email Address',
                     boxtitle: 'Primary Email Address ',
