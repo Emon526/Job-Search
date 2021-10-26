@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables,, avoid_print
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -11,7 +11,15 @@ import 'package:newdemo/widgets/field.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 
 class SignIn extends StatelessWidget {
-  const SignIn({Key? key}) : super(key: key);
+  SignIn({Key? key}) : super(key: key);
+  final TextEditingController _usernamecontroller = TextEditingController();
+
+  final _signinformkey = GlobalKey<FormState>();
+
+  void _submitdata() {
+    final isActive = _signinformkey.currentState!.validate();
+    print(isActive);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,10 +58,15 @@ class SignIn extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.065,
               ),
-              Field(
-                boxtitle: 'Username, Email or Mobile No',
-                horizontalpadding: 0,
-                verticalpadding: 0,
+              Form(
+                key: _signinformkey,
+                child: Field(
+                  controller: _usernamecontroller,
+                  validatortext: 'Enter Your Username, Email or Mobile No',
+                  boxtitle: 'Username, Email or Mobile No',
+                  horizontalpadding: 0,
+                  verticalpadding: 0,
+                ),
               ),
               SizedBox(
                 height: size.height * 0.020,
@@ -148,12 +161,16 @@ class SignIn extends StatelessWidget {
       floatingActionButton: FloatingArrowNextButton(
         icon: Icons.arrow_forward,
         onpress: () => {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => RegistrationCategory(),
-            ),
-          ),
+          _submitdata(),
+          if (_usernamecontroller.text.isNotEmpty)
+            {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => RegistrationCategory(),
+                ),
+              ),
+            },
         },
       ),
     );

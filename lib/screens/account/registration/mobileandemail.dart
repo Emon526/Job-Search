@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:newdemo/screens/account/registration/setuserid.dart';
@@ -16,6 +16,17 @@ class NameOrEmail extends StatefulWidget {
 }
 
 class _NameOrEmailState extends State<NameOrEmail> {
+  final TextEditingController _emailcontroller = TextEditingController();
+  final TextEditingController _mobilecontroller = TextEditingController();
+  final TextEditingController _countrycontroller = TextEditingController();
+
+  final _mobileoremailformkey = GlobalKey<FormState>();
+
+  void _submitdata() {
+    final isActive = _mobileoremailformkey.currentState!.validate();
+    print(isActive);
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -64,34 +75,47 @@ class _NameOrEmailState extends State<NameOrEmail> {
               SizedBox(
                 height: size.height * 0.035,
               ),
-              Field(
-                boxtitle: 'Country Code',
-                horizontalpadding: 0,
-                verticalpadding: 7.5,
-              ),
-              // CountryCodePicker(
-              //   initialSelection: 'BD',
-              // ),
+              Form(
+                key: _mobileoremailformkey,
+                child: Column(
+                  children: [
+                    Field(
+                      controller: _countrycontroller,
+                      validatortext: 'Enter Your Country Code',
+                      boxtitle: 'Country Code',
+                      horizontalpadding: 0,
+                      verticalpadding: 7.5,
+                    ),
+                    // CountryCodePicker(
+                    //   initialSelection: 'BD',
+                    // ),
 
-              Field(
-                boxtitle: 'Mobile Number',
-                horizontalpadding: 0,
-                verticalpadding: 7.5,
+                    Field(
+                      controller: _mobilecontroller,
+                      validatortext: 'Enter Your Mobile No',
+                      boxtitle: 'Mobile Number',
+                      horizontalpadding: 0,
+                      verticalpadding: 7.5,
+                    ),
+                    SizedBox(
+                      height: size.height * 0.035,
+                    ),
+                    OrDivider(),
+                    SizedBox(
+                      height: size.height * 0.035,
+                    ),
+                    Field(
+                      controller: _emailcontroller,
+                      validatortext: 'Enter Your Email',
+                      boxtitle: 'Email',
+                      horizontalpadding: 0,
+                      verticalpadding: 0,
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
-                height: size.height * 0.035,
-              ),
-              OrDivider(),
-              SizedBox(
-                height: size.height * 0.035,
-              ),
-              Field(
-                boxtitle: 'Email',
-                horizontalpadding: 0,
-                verticalpadding: 0,
-              ),
-              SizedBox(
-                height: size.height * 0.20,
+                height: size.height * 0.17,
               ),
               Helpline(),
             ],
@@ -101,12 +125,18 @@ class _NameOrEmailState extends State<NameOrEmail> {
       floatingActionButton: FloatingArrowNextButton(
         icon: Icons.arrow_forward,
         onpress: () => {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SetUserID(),
-            ),
-          ),
+          _submitdata(),
+          if (_emailcontroller.text.isNotEmpty ||
+              _countrycontroller.text.isNotEmpty &&
+                  _mobilecontroller.text.isNotEmpty)
+            {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SetUserID(),
+                ),
+              ),
+            },
         },
       ),
     );
