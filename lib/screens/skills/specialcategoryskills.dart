@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:newdemo/model/skillmodel.dart';
-import 'package:newdemo/screens/account/signin/createaccount.dart';
+import 'package:newdemo/screens/auth/signin/createaccount.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 import 'package:newdemo/widgets/progressindicator.dart';
 import 'package:newdemo/widgets/skillcard.dart';

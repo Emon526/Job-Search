@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:newdemo/screens/account/signin/createaccount.dart';
+import 'package:newdemo/screens/auth/signin/createaccount.dart';
 import 'package:newdemo/screens/skills/functioncategoryskills.dart';
 import 'package:newdemo/screens/skills/specialcategoryskills.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';

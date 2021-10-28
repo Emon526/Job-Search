@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:newdemo/screens/account/registration/information.dart';
+import 'package:newdemo/screens/auth/registration/information.dart';
 import 'package:newdemo/widgets/centericonfullwidthbutton.dart';
 import 'package:newdemo/widgets/helpline.dart';
 import 'package:newdemo/widgets/ordivider.dart';

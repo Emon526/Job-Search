@@ -3,7 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:newdemo/screens/home/searchjob.dart';
+import 'package:newdemo/screens/guesthome/searchjob.dart';
 
 class LogoScreen extends StatefulWidget {
   const LogoScreen({Key? key}) : super(key: key);

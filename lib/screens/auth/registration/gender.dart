@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:newdemo/model/gendermodel.dart';
-import 'package:newdemo/screens/account/registration/mobileandemail.dart';
+import 'package:newdemo/screens/auth/registration/mobileandemail.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 import 'package:newdemo/widgets/gendercard.dart';
 import 'package:newdemo/widgets/helpline.dart';

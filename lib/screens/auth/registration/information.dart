@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:newdemo/screens/account/registration/contactdetails.dart';
+import 'package:newdemo/screens/auth/registration/contactdetails.dart';
 import 'package:newdemo/widgets/informationlisttile.dart';
 
 class Information extends StatelessWidget {

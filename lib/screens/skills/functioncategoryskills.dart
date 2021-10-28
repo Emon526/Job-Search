@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
-import 'package:newdemo/screens/account/registration/gender.dart';
 import 'package:newdemo/model/skillmodel.dart';
+import 'package:newdemo/screens/auth/registration/gender.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 import 'package:newdemo/widgets/progressindicator.dart';
 

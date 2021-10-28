@@ -66,6 +66,15 @@ class Field extends StatelessWidget {
           fillColor: fillcolor,
           prefixIcon: prefixicon,
           suffixIcon: sufixicon,
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.red.withOpacity(0.5),
+              width: 1.0,
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(10.0),
+            ),
+          ),
           errorBorder: OutlineInputBorder(
             borderSide: BorderSide(
               color: Colors.grey.withOpacity(0.5),

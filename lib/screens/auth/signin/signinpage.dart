@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:newdemo/screens/account/registration/registrationcategory.dart';
-import 'package:newdemo/screens/account/signin/createaccount.dart';
+import 'package:newdemo/screens/auth/registration/registrationcategory.dart';
+import 'package:newdemo/screens/auth/signin/createaccount.dart';
 
 import 'package:newdemo/widgets/field.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';

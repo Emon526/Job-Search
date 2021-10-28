@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:newdemo/screens/account/registration/registrationcategory.dart';
+import 'package:newdemo/screens/auth/registration/registrationcategory.dart';
 
 import 'package:newdemo/widgets/field.dart';
 import 'package:newdemo/widgets/floatingarrownextbutton.dart';
