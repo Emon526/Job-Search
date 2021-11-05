@@ -10,14 +10,14 @@ import 'package:newdemo/widgets/floatingarrownextbutton.dart';
 import 'package:newdemo/widgets/helpline.dart';
 import 'package:newdemo/widgets/lefticonfullwidthbutton.dart';
 
-class SearchJob extends StatefulWidget {
-  const SearchJob({Key? key}) : super(key: key);
+class GuestSearchJob extends StatefulWidget {
+  const GuestSearchJob({Key? key}) : super(key: key);
 
   @override
-  _SearchJobState createState() => _SearchJobState();
+  _GuestSearchJobState createState() => _GuestSearchJobState();
 }
 
-class _SearchJobState extends State<SearchJob> {
+class _GuestSearchJobState extends State<GuestSearchJob> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

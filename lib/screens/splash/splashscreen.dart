@@ -23,7 +23,7 @@ class _LogoScreenState extends State<LogoScreen> {
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => SearchJob(),
+          builder: (context) => GuestSearchJob(),
         ),
       ),
     );
