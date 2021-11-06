@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:newdemo/model/profilestatmodel.dart';
+import 'package:newdemo/screens/userprofile/userdetails.dart';
 import 'package:newdemo/widgets/profilegridview.dart';
 
 class UserProfile extends StatefulWidget {
@@ -71,7 +72,10 @@ class _UserProfileState extends State<UserProfile>
                 Icons.account_circle,
                 size: 30,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => UserDetails()));
+              },
             ),
           ),
         ],

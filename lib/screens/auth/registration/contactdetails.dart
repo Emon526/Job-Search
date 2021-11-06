@@ -1,9 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
-import 'package:newdemo/widgets/custombutton.dart';
-import 'package:newdemo/widgets/field.dart';
-import 'package:newdemo/widgets/floatingarrownextbutton.dart';
+import 'package:newdemo/widgets/helpline.dart';
 
 class ContactDetails extends StatefulWidget {
   const ContactDetails({Key? key}) : super(key: key);
@@ -13,28 +11,10 @@ class ContactDetails extends StatefulWidget {
 }
 
 class _ContactDetailsState extends State<ContactDetails> {
-  final TextEditingController _presentdistrictcontroller =
-      TextEditingController();
-  final TextEditingController _perdistrictcontroller = TextEditingController();
-  final TextEditingController _presentthanacontroller = TextEditingController();
-  final TextEditingController _permanentthanacontroller =
-      TextEditingController();
-  final TextEditingController _premanentdistrictcontroller =
-      TextEditingController();
-  final TextEditingController _perhousenocontroller = TextEditingController();
-  final TextEditingController _mobilecontroller = TextEditingController();
-  final TextEditingController _emailcontroller = TextEditingController();
-
-  final _contactdetailsformkey = GlobalKey<FormState>();
-  void _submitdata() {
-    final isActive = _contactdetailsformkey.currentState!.validate();
-    print(isActive);
-  }
-
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Color(0xff122f51),
@@ -45,167 +25,247 @@ class _ContactDetailsState extends State<ContactDetails> {
             Navigator.pop(context);
           },
         ),
+        actions: [
+          GestureDetector(
+            onTap: () {},
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Icon(
+                Icons.edit,
+              ),
+            ),
+          )
+        ],
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SingleChildScrollView(
-            child: Form(
-              key: _contactdetailsformkey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                alignment: Alignment.bottomCenter,
+                image: AssetImage('asset/images/background.jpg'))),
+        padding: const EdgeInsets.only(
+          left: 20,
+          right: 20,
+          top: 20,
+        ),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.location_pin,
+                  size: 24,
+                  color: Color(0xff122f51),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'Present Address',
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            ),
+            TextFormField(
+              minLines: 5,
+              keyboardType: TextInputType.multiline,
+              maxLines: 5,
+              decoration: InputDecoration(
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.red.withOpacity(0.5),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                errorBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey.withOpacity(0.5),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey.withOpacity(0.5),
+                    width: 1.0,
+                  ),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey.withOpacity(0.5),
+                    width: 2.0,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.location_city,
+                  size: 24,
+                  color: Color(0xff122f51),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'Permanent Address',
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            ),
+            TextFormField(
+              minLines: 5,
+              keyboardType: TextInputType.multiline,
+              maxLines: 5,
+              decoration: InputDecoration(
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.red.withOpacity(0.5),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                errorBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey.withOpacity(0.5),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey.withOpacity(0.5),
+                    width: 1.0,
+                  ),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey.withOpacity(0.5),
+                    width: 2.0,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.phone,
+                  size: 24,
+                  color: Color(0xff122f51),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'Phone Number',
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            ),
+            TextFormField(
+              minLines: 3,
+              keyboardType: TextInputType.multiline,
+              maxLines: 5,
+              decoration: InputDecoration(
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.red.withOpacity(0.5),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                errorBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey.withOpacity(0.5),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey.withOpacity(0.5),
+                    width: 1.0,
+                  ),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey.withOpacity(0.5),
+                    width: 2.0,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ListTile(
-                    title: Text(
-                      'Present Address *',
-                    ),
-                  ),
-                  Field(
-                    fillcolor: Colors.transparent,
-                    levelcolor: Colors.grey,
-                    obscureText: false,
-                    controller: _presentdistrictcontroller,
-                    validatortext: 'Please Enter Present Address District',
-                    boxtitle: 'District *',
-                    horizontalpadding: 10,
-                    verticalpadding: 10,
-                  ),
-                  Field(
-                    fillcolor: Colors.transparent,
-                    levelcolor: Colors.grey,
-                    obscureText: false,
-                    controller: _perdistrictcontroller,
-                    validatortext: 'Please Enter Present Address Thana',
-                    boxtitle: 'Thana *',
-                    horizontalpadding: 10,
-                    verticalpadding: 10,
-                  ),
-                  Field(
-                    fillcolor: Colors.transparent,
-                    levelcolor: Colors.grey,
-                    obscureText: false,
-                    controller: _presentthanacontroller,
-                    validatortext: 'Please Enter Present Address House No.',
-                    boxtitle: 'House No./ Road /Village *',
-                    horizontalpadding: 10,
-                    verticalpadding: 10,
+                  Icon(
+                    Icons.alternate_email,
+                    size: 24,
+                    color: Color(0xff122f51),
                   ),
                   SizedBox(
-                    height: size.height * 0.025,
+                    width: 20,
                   ),
-                  ListTile(
-                    title: Text(
-                      'Permanent Address *',
-                    ),
-                  ),
-                  Field(
-                    fillcolor: Colors.transparent,
-                    levelcolor: Colors.grey,
-                    obscureText: false,
-                    controller: _premanentdistrictcontroller,
-                    validatortext: 'Please Enter Permanent Address District',
-                    boxtitle: 'District *',
-                    horizontalpadding: 10,
-                    verticalpadding: 10,
-                  ),
-                  Field(
-                    fillcolor: Colors.transparent,
-                    levelcolor: Colors.grey,
-                    obscureText: false,
-                    controller: _permanentthanacontroller,
-                    validatortext: 'Please Enter Permanent Address Thana',
-                    boxtitle: 'Thana *',
-                    horizontalpadding: 10,
-                    verticalpadding: 10,
-                  ),
-                  Field(
-                    fillcolor: Colors.transparent,
-                    levelcolor: Colors.grey,
-                    obscureText: false,
-                    controller: _perhousenocontroller,
-                    validatortext: 'Please Enter Permanent Address House No.',
-                    boxtitle: 'House No./ Road /Village *',
-                    horizontalpadding: 10,
-                    verticalpadding: 10,
-                  ),
-                  SizedBox(
-                    height: size.height * 0.025,
-                  ),
-                  ListTile(
-                    title: Text(
-                      'Mobile Number',
-                    ),
-                  ),
-                  Field(
-                    fillcolor: Colors.transparent,
-                    levelcolor: Colors.grey,
-                    obscureText: false,
-                    controller: _mobilecontroller,
-                    validatortext: 'Please Enter Your Mobile No.',
-                    boxtitle: 'Mobile No',
-                    horizontalpadding: 10,
-                    verticalpadding: 10,
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  CustomButton(
-                    icon: Icons.phone,
-                    text: 'Add Mobile No',
-                  ),
-                  ListTile(
-                    title: Text(
-                      'Email Address',
-                    ),
-                  ),
-                  Field(
-                    fillcolor: Colors.transparent,
-                    levelcolor: Colors.grey,
-                    obscureText: false,
-                    controller: _emailcontroller,
-                    validatortext: 'Please Enter Your Email Address',
-                    boxtitle: 'Primary Email Address ',
-                    horizontalpadding: 10,
-                    verticalpadding: 10,
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  CustomButton(
-                    icon: Icons.email,
-                    text: 'Add Email Address',
-                  ),
-                  SizedBox(
-                    height: size.height * 0.065,
-                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Email Address',
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'marium@pencilbox.edu.bd',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff122f51),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
-          ),
+            SizedBox(
+              height: 50,
+            ),
+            Helpline(),
+          ],
         ),
-      ),
-      floatingActionButton: FloatingArrowNextButton(
-        onpress: () => {
-          _submitdata(),
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => ,
-          //   ),
-          // ),
-          //         _submitdata(),
-          //   if (_namecontroller.text.isNotEmpty)
-          //     {
-          //       Navigator.push(
-          //         context,
-          //         MaterialPageRoute(
-          //           builder: (context) => RegistrationCategory(),
-          //         ),
-          //       ),
-          //     },
-          // },
-        },
-        icon: Icons.done,
       ),
     );
   }

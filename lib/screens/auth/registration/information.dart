@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:newdemo/screens/auth/registration/contactdetails.dart';
+import 'package:newdemo/screens/auth/registration/personaldetails.dart';
+import 'package:newdemo/screens/auth/registration/preferredareas.dart';
 import 'package:newdemo/widgets/informationlisttile.dart';
 
 class Information extends StatelessWidget {
@@ -36,7 +38,14 @@ class Information extends StatelessWidget {
                 InformationListTile(
                   icon: Icons.person,
                   title: 'Personal Details',
-                  onpress: () {},
+                  onpress: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PersonalDetails(),
+                      ),
+                    );
+                  },
                 ),
                 InformationListTile(
                   icon: Icons.perm_contact_calendar,
@@ -58,7 +67,14 @@ class Information extends StatelessWidget {
                 InformationListTile(
                   icon: Icons.pin_drop_outlined,
                   title: 'Preferred Areas',
-                  onpress: () {},
+                  onpress: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PreferredaAreas(),
+                      ),
+                    );
+                  },
                 ),
                 InformationListTile(
                   icon: Icons.info,
