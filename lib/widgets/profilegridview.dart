@@ -4,10 +4,16 @@ import 'package:flutter/material.dart';
 
 class ProfileGridViewcard extends StatefulWidget {
   final String count;
-  final String titile;
+  final String title;
   final IconData? icon;
+  final List<Color> color;
+
   const ProfileGridViewcard(
-      {Key? key, required this.count, required this.titile, this.icon})
+      {Key? key,
+      required this.count,
+      required this.title,
+      this.icon,
+      required this.color})
       : super(key: key);
 
   @override
@@ -18,20 +24,22 @@ class _ProfileGridViewcardState extends State<ProfileGridViewcard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.only(
+        left: 15,
+        top: 15,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         gradient: LinearGradient(
-          colors: [
-            Color(0xff162e54),
-            Color(0xff4c66ec),
-          ],
+          colors: widget.color,
         ),
       ),
       child: Stack(
         children: [
           Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 widget.count,
@@ -41,10 +49,10 @@ class _ProfileGridViewcardState extends State<ProfileGridViewcard> {
                 ),
               ),
               SizedBox(
-                height: 5,
+                height: 10,
               ),
               Text(
-                widget.titile,
+                widget.title,
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.white,
@@ -53,10 +61,11 @@ class _ProfileGridViewcardState extends State<ProfileGridViewcard> {
             ],
           ),
           Positioned(
-            bottom: 0.0,
-            right: 0.0,
+            bottom: 20.0,
+            right: 20.0,
             child: Icon(
               widget.icon,
+              size: 30,
               color: Colors.white.withOpacity(0.4),
             ), //Icon
           ),

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:newdemo/model/profilestatmodel.dart';
+import 'package:newdemo/widgets/profilegridview.dart';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({Key? key}) : super(key: key);
@@ -10,8 +11,24 @@ class UserProfile extends StatefulWidget {
   _UserProfileState createState() => _UserProfileState();
 }
 
-class _UserProfileState extends State<UserProfile> {
+class _UserProfileState extends State<UserProfile>
+    with SingleTickerProviderStateMixin {
   final _statlist = Stats.statslistValue();
+
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = TabController(length: 2, vsync: this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _tabController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -59,44 +76,120 @@ class _UserProfileState extends State<UserProfile> {
           ),
         ],
       ),
-      // body: Column(
-      //   children: [
-      //     SizedBox(
-      //       height: 70,
-      //     ),
-      //     Container(
-      //       padding: EdgeInsets.symmetric(
-      //         horizontal: 25,
-      //       ),
-      //       color: Colors.red,
-      //       width: double.infinity,
-      //       height: 470,
-      //       child: GridView.builder(
-      //         physics: NeverScrollableScrollPhysics(),
-
-      //         // shrinkWrap: true,
-      //         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-      //           crossAxisCount: 2,
-      //           crossAxisSpacing: 10.0,
-      //           mainAxisSpacing: 10.0,
-      //         ),
-      //         itemCount: 6,
-      //         itemBuilder: (context, index) {
-      //           return ProfileGridViewcard(
-      //             count: _statlist[index].count,
-      //             titile: _statlist[index].title,
-      //             icon: _statlist[index].icon,
-      //           );
-      //         },
-      //       ),
-      //     ),
-      //   ],
-      // ),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 15,
+          ),
+          Container(
+            height: 45,
+            width: size.width * 0.6,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 1.5,
+              ),
+              borderRadius: BorderRadius.circular(
+                8.0,
+              ),
+            ),
+            child: TabBar(
+              controller: _tabController,
+              indicator: BoxDecoration(
+                color: Colors.black,
+              ),
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.black,
+              tabs: [
+                Tab(
+                  text: 'This Month',
+                ),
+                Tab(
+                  text: 'All Time',
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            width: double.infinity,
+            height: 540,
+            child: GridView(
+              physics: NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 20.0,
+                mainAxisSpacing: 20.0,
+              ),
+              children: [
+                ProfileGridViewcard(
+                  color: [
+                    Color(0xff162e54),
+                    Color(0xff4c66ec),
+                  ],
+                  count: _statlist[0].count,
+                  title: _statlist[0].title,
+                  icon: _statlist[0].icon,
+                ),
+                ProfileGridViewcard(
+                  color: [
+                    Color(0xff98155B),
+                    Color(0xffDB1D37),
+                  ],
+                  count: _statlist[1].count,
+                  title: _statlist[1].title,
+                  icon: _statlist[1].icon,
+                ),
+                ProfileGridViewcard(
+                  color: [
+                    Color(0xffB73B0D),
+                    Color(0xffF9B118),
+                  ],
+                  count: _statlist[2].count,
+                  title: _statlist[2].title,
+                  // icon: _statlist[2].icon,
+                ),
+                ProfileGridViewcard(
+                  color: [
+                    Color(0xff046F75),
+                    Color(0xff4CCBDB),
+                  ],
+                  count: _statlist[3].count,
+                  title: _statlist[3].title,
+                  icon: _statlist[3].icon,
+                ),
+                ProfileGridViewcard(
+                  color: [
+                    Color(0xff7618A5),
+                    Color(0xffC20BE2),
+                  ],
+                  count: _statlist[4].count,
+                  title: _statlist[4].title,
+                  icon: _statlist[4].icon,
+                ),
+                ProfileGridViewcard(
+                  color: [
+                    Color(0xff3E5057),
+                    Color(0xff8B9EA4),
+                  ],
+                  count: _statlist[5].count,
+                  title: _statlist[5].title,
+                  // icon: _statlist[5].icon,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
         child: Icon(
           Icons.manage_accounts,
-          size: 30,
+          size: 35,
         ),
         onPressed: () {
           showDialog(

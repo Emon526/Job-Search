@@ -11,32 +11,32 @@ class Stats {
       Stats(
         '13',
         'Jobs\nApplied',
-        Icons.verified,
+        Icons.insert_drive_file,
       ),
       Stats(
         '13',
         'Times Emailed\nResume',
-        Icons.ac_unit,
+        Icons.send,
       ),
       Stats(
         '9',
         'Employers Viewed\nApplied',
-        Icons.safety_divider,
+        Icons.visibility,
       ),
       Stats(
         '7',
         'Employers\nFollowed',
-        Icons.ac_unit,
+        Icons.person_add,
       ),
       Stats(
         '5',
         'Interview\ninvitations',
-        Icons.ac_unit,
+        Icons.groups,
       ),
       Stats(
         '5',
         'Massages by\nEmployers',
-        Icons.ac_unit,
+        Icons.mail,
       ),
     ];
   }
