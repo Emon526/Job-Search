@@ -40,6 +40,7 @@ dependencies:
   country_code_picker: ^2.0.2
   country_list_pick: ^1.0.0+3
   custom_navigation_bar: ^0.8.2
+  flutter_holo_date_picker: ^1.0.1+2
   flutter_localizations: 
     sdk: flutter
     version: ^0.0.0

@@ -52,7 +52,9 @@ class _UserProfileState extends State<UserProfile>
                 Icons.search,
                 size: 30,
               ),
-              onTap: () {},
+              onTap: () {
+        
+              },
             ),
           ),
           SizedBox(
@@ -99,6 +101,9 @@ class _UserProfileState extends State<UserProfile>
             child: TabBar(
               controller: _tabController,
               indicator: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  6.0,
+                ),
                 color: Colors.black,
               ),
               labelColor: Colors.white,
@@ -121,7 +126,9 @@ class _UserProfileState extends State<UserProfile>
               horizontal: 20,
             ),
             width: double.infinity,
-            height: 540,
+            // height: 540,
+            height: size.height * 0.67,
+
             child: GridView(
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
